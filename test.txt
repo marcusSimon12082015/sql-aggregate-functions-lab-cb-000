@@ -5,24 +5,26 @@ aggregate functions sql
   #lowest_student_gpa
     finds the lowest gpa
   #average_student_gpa
-    finds the average gpa (FAILED - 1)
+    finds the average gpa
+  #total_tardies_for_all_students
+    finds the total amount of tardies for all students (FAILED - 1)
 
 Failures:
 
-  1) aggregate functions sql #average_student_gpa finds the average gpa
-     Failure/Error: expect(@db.execute(average_student_gpa)).to eq([[2.95]])
+  1) aggregate functions sql #total_tardies_for_all_students finds the total amount of tardies for all students
+     Failure/Error: expect(@db.execute(total_tardies_for_all_students)).to eq([[49]])
      TypeError:
        no implicit conversion of nil into String
      # /usr/local/rvm/gems/ruby-2.3.1/gems/sqlite3-1.3.11/lib/sqlite3/database.rb:91:in `initialize'
      # /usr/local/rvm/gems/ruby-2.3.1/gems/sqlite3-1.3.11/lib/sqlite3/database.rb:91:in `new'
      # /usr/local/rvm/gems/ruby-2.3.1/gems/sqlite3-1.3.11/lib/sqlite3/database.rb:91:in `prepare'
      # /usr/local/rvm/gems/ruby-2.3.1/gems/sqlite3-1.3.11/lib/sqlite3/database.rb:134:in `execute'
-     # ./spec/student_spec.rb:25:in `block (3 levels) in <top (required)>'
+     # ./spec/student_spec.rb:30:in `block (3 levels) in <top (required)>'
 
-Finished in 0.00514 seconds (files took 0.16554 seconds to load)
-3 examples, 1 failure
+Finished in 0.00511 seconds (files took 0.17517 seconds to load)
+4 examples, 1 failure
 
 Failed examples:
 
-rspec ./spec/student_spec.rb:24 # aggregate functions sql #average_student_gpa finds the average gpa
+rspec ./spec/student_spec.rb:29 # aggregate functions sql #total_tardies_for_all_students finds the total amount of tardies for all students
 
