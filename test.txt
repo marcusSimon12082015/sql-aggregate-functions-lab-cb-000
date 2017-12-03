@@ -1,0 +1,23 @@
+
+aggregate functions sql
+  #highest_student_gpa
+    finds the highest gpa (FAILED - 1)
+
+Failures:
+
+  1) aggregate functions sql #highest_student_gpa finds the highest gpa
+     Failure/Error: expect(@db.execute(highest_student_gpa)).to eq([[4.0]])
+       
+       expected: [[4.0]]
+            got: [[3, "Zak", 4.0]]
+       
+       (compared using ==)
+     # ./spec/student_spec.rb:15:in `block (3 levels) in <top (required)>'
+
+Finished in 0.01901 seconds (files took 0.20104 seconds to load)
+1 example, 1 failure
+
+Failed examples:
+
+rspec ./spec/student_spec.rb:14 # aggregate functions sql #highest_student_gpa finds the highest gpa
+
