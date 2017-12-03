@@ -1,23 +1,26 @@
 
 aggregate functions sql
   #highest_student_gpa
-    finds the highest gpa (FAILED - 1)
+    finds the highest gpa
+  #lowest_student_gpa
+    finds the lowest gpa (FAILED - 1)
 
 Failures:
 
-  1) aggregate functions sql #highest_student_gpa finds the highest gpa
-     Failure/Error: expect(@db.execute(highest_student_gpa)).to eq([[4.0]])
-       
-       expected: [[4.0]]
-            got: [[3, "Zak", 4.0]]
-       
-       (compared using ==)
-     # ./spec/student_spec.rb:15:in `block (3 levels) in <top (required)>'
+  1) aggregate functions sql #lowest_student_gpa finds the lowest gpa
+     Failure/Error: expect(@db.execute(lowest_student_gpa)).to eq([[1.9]])
+     TypeError:
+       no implicit conversion of nil into String
+     # /usr/local/rvm/gems/ruby-2.3.1/gems/sqlite3-1.3.11/lib/sqlite3/database.rb:91:in `initialize'
+     # /usr/local/rvm/gems/ruby-2.3.1/gems/sqlite3-1.3.11/lib/sqlite3/database.rb:91:in `new'
+     # /usr/local/rvm/gems/ruby-2.3.1/gems/sqlite3-1.3.11/lib/sqlite3/database.rb:91:in `prepare'
+     # /usr/local/rvm/gems/ruby-2.3.1/gems/sqlite3-1.3.11/lib/sqlite3/database.rb:134:in `execute'
+     # ./spec/student_spec.rb:20:in `block (3 levels) in <top (required)>'
 
-Finished in 0.01901 seconds (files took 0.20104 seconds to load)
-1 example, 1 failure
+Finished in 0.00445 seconds (files took 0.17586 seconds to load)
+2 examples, 1 failure
 
 Failed examples:
 
-rspec ./spec/student_spec.rb:14 # aggregate functions sql #highest_student_gpa finds the highest gpa
+rspec ./spec/student_spec.rb:19 # aggregate functions sql #lowest_student_gpa finds the lowest gpa
 
